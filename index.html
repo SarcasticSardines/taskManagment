@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+
+<div class="container my-4">
+    <div class="row autome d-flex justify-center">
+            <h1 class="text-center autome light">Name Here</h1>
+            <button id="addBtn" class="btn btn-warning thebutton" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                Add Tasks
+              </button>
+    </div>
+</div>
+
+<div class="container box">
+    <div class="row text-center contrast">
+        <div class="col light"> <h2 id="toDoCount">TO DO: 0</h2> </div>
+        <div class="col light"><h2 id="inProgCount">IN PROGRESS: 0</h2></div>
+        <div class="col light"><h2 id="completeCount">COMPLETED: 0</h2></div>
+    </div>
+    <div class="row" style="position: inherit;">
+        <div id="todos" class="col"></div>
+        <div id="inprogs" class="col"></div>
+        <div id="completes" class="col"></div>
+    </div>
+
+    <div class="offcanvas canvapos" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Task Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr>
+        <div class="offcanvas-body">
+          <div>
+            <label>Name:</label>
+            <input id="projName" type="text">
+          </div>
+          <div>
+            <label>Description:</label>
+            <input id="projDesc" type="text">
+          </div>
+          <div class="dropdown mt-3">
+            <label>Priority:</label>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Select a priority
+            </button>
+            <ul class="dropdown-menu">
+              <li id="choiceA"><a class="dropdown-item" href="#">To Do</a></li>
+              <li id="choiceB"><a class="dropdown-item" href="#">In Progress</a></li>
+              <li id="choiceC"><a class="dropdown-item" href="#">Completed</a></li>
+            </ul>
+          </div>
+          <div>
+              <label>Due Date:</label>
+              <input id="projDate" type="date">
+          </div>
+          <hr class="mt-5">
+          <button id="saveit">Save</button>
+          <button>Close</button>
+        </div>
+        </div>
+      
+</div>
+    
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>

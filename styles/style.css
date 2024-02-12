@@ -1,0 +1,28 @@
+body{
+    background-color: indigo;
+}
+.contrast{
+    background-color: midnightblue;
+}
+.light{
+    color: white;
+}
+.autome{
+    margin: auto;
+    position: relative;
+}
+.thebutton{
+    width: 10%;
+    position: absolute;
+}
+.box{
+    background-color: gainsboro;
+    height: 700px;
+}
+.canvapos{
+    position: absolute;
+    top: 20%;
+    right: 35%;
+    height: 40%;
+    width: 30%;
+}
