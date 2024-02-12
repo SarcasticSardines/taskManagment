@@ -1,4 +1,4 @@
-import { savetolocalstorage, getlocalstorage, removefromlocalstorage } from "./localstorage";
+import { savetolocalstorage, getlocalstorage, removefromlocalstorage } from "./localstorage.js";
 
 let addBtn = document.getElementById("addBtn");
 let toDoCount = document.getElementById("toDoCount");
@@ -20,19 +20,45 @@ let saveit = document.getElementById("saveit");
 
 let task = "";
 let priority = 0;
+let status = 0;
 //1 is to-do, 2 is in progress, 3 is complete
 
-addBtn.addEventListener("click", (e)=>{
 
+projName.addEventListener("keydown", (e)=>{
+    let name = projName.value;
+    savetolocalstorage(name)
+});
+projDesc.addEventListener("keydown", (e)=>{
+    let descript = projDesc.value;
+    savetolocalstorage(descript)
 });
 
 saveit.addEventListener("click", ()=>{
     // savetolocalstorage(task[0]name, desc, priority, due date)
     //task divs- 1=todos.append(div), 2=inprogs.append(div), 3=completes.append(div)
     let tracked = getlocalstorage();
-    tracked.map(projName => {
+    tracked.map(name => {
         let div = document.createElement("div");
-        let p = document.createElement("p");
-        
+        let h6 = document.createElement("h6");
+        let button = document.createElement("button");
+        h6.textContent = name;
+        button.type = "button";
+        button.textContent = "View Task";
+
+        button.addEventListener("click", (e)=>{
+            let subdiv = document.createElement("div");
+            let p = document.createElement("p");
+            let pp = document.createElement("p");
+            let ppp = document.createElement("p");
+            let close = document.createElement("button");
+
+            p.textContent = name;
+            pp.textContent = descript;
+            let ppp =
+        })
+
+        div.append(h6);
+        div.append(button);
+        todos.append(div);
     })
 });
