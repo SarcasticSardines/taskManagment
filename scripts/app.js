@@ -32,6 +32,10 @@ projDesc.addEventListener("keydown", (e)=>{
     let descript = projDesc.value;
     savetolocalstorage(descript)
 });
+projDate.addEventListener("click", (e)=>{
+    let dayte = projDate.value;
+    savetolocalstorage(dayte)
+})
 
 saveit.addEventListener("click", ()=>{
     // savetolocalstorage(task[0]name, desc, priority, due date)
@@ -49,12 +53,18 @@ saveit.addEventListener("click", ()=>{
             let subdiv = document.createElement("div");
             let p = document.createElement("p");
             let pp = document.createElement("p");
-            let ppp = document.createElement("p");
+            let another = document.createElement("p");
             let close = document.createElement("button");
 
             p.textContent = name;
             pp.textContent = descript;
-            let ppp =
+            // let another = dayte;
+            //cannot redeclare block scoped variable error? 
+            close.textContent = "Remove task";
+
+            close.addEventListener("click", (e)=>{
+                removefromlocalstorage(name, descript);
+            })
         })
 
         div.append(h6);
